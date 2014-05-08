@@ -36,7 +36,7 @@ defmodule Handler.WeberReqHandler do
     {path, req2} = :cowboy_req.path(req)
 
     case :lists.keyfind(:log, 1, Config.config) do
-      {:ok, true} -> 
+      {:log, true} ->
         Lager.info  "[" <> get_time() <> "]" <> " " <> "[" <> conn.method <> "] " <> path
       _ -> :ok
     end
